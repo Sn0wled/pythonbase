@@ -49,7 +49,22 @@ print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, '�
 # WARNING для знающих циклы: БЕЗ циклов. Да, с переменными; да, неэффективно; да, копипаста.
 # Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
 
-# TODO здесь ваш код
+table_code = goods['Стол']
+table_cost = store[table_code][0]['quantity'] * store[table_code][0]['price'] + store[table_code][1]['quantity'] * store[table_code][1]['price']
+table_quantity = store[table_code][0]['quantity'] + store[table_code][1]['quantity']
+
+sofa_code = goods['Диван']
+sofa_cost = store[sofa_code][0]['quantity'] * store[sofa_code][0]['price'] + store[sofa_code][1]['quantity'] * store[sofa_code][1]['price']
+sofa_quantity = store[sofa_code][0]['quantity'] + store[sofa_code][1]['quantity']
+
+chair_code = goods['Стул']
+chair_cost = store[chair_code][0]['quantity'] * store[chair_code][0]['price'] + store[chair_code][1]['quantity'] * store[chair_code][1]['price'] + store[chair_code][2]['quantity'] * store[chair_code][2]['price']
+chair_quantity = store[chair_code][0]['quantity'] +store[chair_code][1]['quantity'] +store[chair_code][2]['quantity']
+
+
+print('Стол - {} шт, стоимость {} руб'.format(table_quantity, table_cost))
+print('Диван - {} шт, стоимость {} руб'.format(sofa_quantity, sofa_cost))
+print('Стул - {} шт, стоимость {} руб'.format(chair_quantity, chair_cost))
 
 ##########################################################################################
 # ВНИМАНИЕ! После того как __ВСЯ__ домашняя работа сделана и запушена на сервер,         #
