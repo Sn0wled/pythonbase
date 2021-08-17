@@ -10,5 +10,8 @@
 #   Студенту надо попросить ХХХ.ХХ рублей
 
 educational_grant, expenses = 10000, 12000
-
-# TODO здесь ваш код
+parents_money = 0
+for i in range(10):
+    lack_of_money = expenses * 1.03 ** i - educational_grant
+    parents_money += lack_of_money
+print('Студенту надо попросить {} рублей'.format(round(parents_money, 2)))
