@@ -12,6 +12,7 @@ import simple_draw as sd
 def smile(x_position, y_position, color):
     start_point = sd.get_point(x_position, y_position)
     sd.circle(start_point, radius=40, color=color, width=2)
+    sd.circle(start_point, radius=40, color=sd.COLOR_YELLOW, width=0)
 
     eye_distance = 15
     left_eye_pos = sd.get_point(x_position + eye_distance, y_position + 10)
