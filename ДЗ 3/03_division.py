@@ -9,5 +9,9 @@
 #   Целочисленное деление ХХХ на YYY дает ZZZ
 
 a, b = 179, 37
-
-# TODO здесь ваш код
+del_value = 0
+temp_num = a
+while temp_num > b:
+    temp_num -= b
+    del_value += 1
+print('Целочисленное деление {} на {} дает {}'.format(a, b, del_value))
