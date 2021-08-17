@@ -46,10 +46,10 @@ store = {
 #         подсчет стоимости товара
 #     вывод на консоль количества и стоимости товара на складе
 
-for product, product_id in goods.items():
+for product_name, product_id in goods.items():
     products_total_price = 0
     total_quantity = 0
     for product_dict in store[product_id]:
         products_total_price += product_dict['quantity'] * product_dict['price']
         total_quantity += product_dict['quantity']
-    print(f"{product} - {total_quantity} шт, стоимость {products_total_price} руб")
+    print(f"{product_name} - {total_quantity} шт, стоимость {products_total_price} руб")
