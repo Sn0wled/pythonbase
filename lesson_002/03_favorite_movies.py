@@ -19,7 +19,5 @@ index_start = my_favorite_movies.find(',') + 2
 index_end = my_favorite_movies.find(',', index_start)
 print(my_favorite_movies[index_start:index_end])
 index_end = my_favorite_movies.rfind(',')
-index_start = my_favorite_movies.rfind(',',0, index_end) + 2
+index_start = my_favorite_movies.rfind(',', 0, index_end) + 2
 print(my_favorite_movies[index_start:index_end])
-
-
