@@ -27,8 +27,35 @@ import simple_draw as sd
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
-# TODO здесь ваш код
+point_0 = sd.get_point(200, 200)
 
+
+def draw_rectangle(start_point, edge_length, start_angle=0, apex_number=3):
+    end_point = start_point
+    for angle in range(start_angle, start_angle + 360 - int(360 / apex_number), int(360 / apex_number)):
+        v1 = sd.get_vector(start_point=end_point, angle=angle, length=edge_length)
+        v1.draw(width=3)
+        end_point = v1.end_point
+    sd.line(start_point, end_point, width=3)
+
+
+def draw_triangle(start_point, edge_length, start_angle=0):
+    draw_rectangle(start_point, edge_length, start_angle=0, apex_number=3)
+
+
+def draw_square(start_point, edge_length, start_angle=0):
+    draw_rectangle(start_point, edge_length, start_angle=0, apex_number=4)
+
+
+def draw_pentagon(start_point, edge_length, start_angle=0):
+    draw_rectangle(start_point, edge_length, start_angle=0, apex_number=5)
+
+
+def draw_hexagon(start_point, edge_length, start_angle=0):
+    draw_rectangle(start_point, edge_length, start_angle=0, apex_number=6)
+
+
+draw_pentagon(point_0, 200)
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
 # Скажем, связывать точки не линиями, а дугами. Или двойными линиями. Или рисовать круги в угловых точках. Или...
