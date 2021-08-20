@@ -17,19 +17,19 @@ while True:
     sd.clear_screen()
     point = sd.get_point(x, y)
     sd.snowflake(center=point, length=50)
-    y -= 10
+    y -= 1
     if y < 50:
        break
-    x = x + 10
+    x = x + 1
 
     point2 = sd.get_point(x2, y2)
     sd.snowflake(center=point2, length=30)
-    y2 -= 10
+    y2 -= 1
     if y2 < 50:
        break
-    x2 = x2 + 20
+    x2 = x2 + 2
 
-    sd.sleep(0.1)
+    sd.sleep(0.01)
     if sd.user_want_exit():
         break
 

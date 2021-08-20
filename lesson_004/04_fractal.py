@@ -57,24 +57,26 @@ root_point = sd.get_point(500, 30)
 # - сделать рандомное отклонение длины ветвей в пределах 20% от коэффициента 0.75
 # Возможный результат решения см lesson_004/results/exercise_04_fractal_02.jpg
 
-def draw_branches(start_point, angle_draw, branches_length):
+def draw_branches(start_point, angle_draw, branches_length, start_width):
     if branches_length > 3:
         delta_angle = 30
         angle_vector_1 = angle_draw + delta_angle * sd.randint(60, 140) / 100
         angle_vector_2 = angle_draw - delta_angle * sd.randint(60, 140) / 100
         vector = sd.get_vector(start_point, angle_draw, branches_length)
-        vector.draw(width=2)
-        draw_branches(vector.end_point, angle_vector_1, branches_length * .70 * sd.randint(80, 120) / 100)
-        draw_branches(vector.end_point, angle_vector_2, branches_length * .70 * sd.randint(80, 120) / 100)
+        vector.draw(width=int(start_width), color=(255, 208, 205))
+        draw_branches(vector.end_point, angle_vector_1, branches_length * .70 * sd.randint(80, 120) / 100,
+                      start_width=start_width * 0.8)
+        draw_branches(vector.end_point, angle_vector_2, branches_length * .70 * sd.randint(80, 120) / 100,
+                      start_width=start_width * 0.8)
     else:
         delta_angle = 30
         angle_vector_1 = angle_draw + delta_angle * sd.randint(60, 140) / 100
         angle_vector_2 = angle_draw - delta_angle * sd.randint(60, 140) / 100
         vector = sd.get_vector(start_point, angle_draw, branches_length)
-        vector.draw(width=5, color=sd.COLOR_DARK_GREEN)
+        vector.draw(width=2, color=sd.COLOR_DARK_GREEN)
 
 
-draw_branches(root_point, 90, 100)
+draw_branches(root_point, 90, 100, start_width=20)
 
 # Пригодятся функции
 # sd.random_number()
