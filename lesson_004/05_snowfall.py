@@ -7,7 +7,8 @@ import simple_draw as sd
 # - нарисовать падение этих N снежинок
 # - создать список рандомных длинн лучей снежинок (от 10 до 100) и пусть все снежинки будут разные
 
-N = 50
+N = 10
+sd.resolution = (1000, 900)
 
 # Пригодятся функции
 # sd.get_point()
@@ -18,22 +19,32 @@ N = 50
 
 snowflake_arrow = list()
 
-for i in range(N):
+
+def create_snowflake():
     random_length = sd.randint(10, 100)
-    snowflake_arrow.append({"length": random_length, "point": sd.random_point()})
+    random_x = sd.randint(0, sd.resolution[0])
+    random_y = sd.randint(random_length + 100, sd.resolution[1])
+    snowflake_arrow.append({"length": random_length, "point": sd.get_point(random_x, random_y)})
+
+
+for i in range(N):
+    create_snowflake()
+
+fallen_snowflakes = list()
 
 while True:
-    test = True
-    for snowflake_data in snowflake_arrow:
-        sd.start_drawing()
-        sd.snowflake(snowflake_data['point'], snowflake_data['length'], color=sd.background_color)
-        if snowflake_data['point'].y > snowflake_data['length']:
-            snowflake_data['point'].y -= 10
-            test = False
-        sd.snowflake(snowflake_data['point'], snowflake_data['length'])
+    sd.start_drawing()
+    for flake in snowflake_arrow:
+        sd.snowflake(flake['point'], flake['length'], color=sd.background_color)
+        if flake['point'].y > flake['length']:
+            flake['point'].y -= 20
+            flake['point'].x -= sd.randint(-10, 10)
+            if flake['point'].y <= flake['length']:
+                create_snowflake()
+        sd.snowflake(flake['point'], flake['length'])
         sd.finish_drawing()
     sd.sleep(0.1)
-    if sd.user_want_exit() or test:
+    if sd.user_want_exit():
         break
 
 sd.pause()
