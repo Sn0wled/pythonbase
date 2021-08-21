@@ -7,6 +7,16 @@
 
 # TODO здесь ваш код
 
+import district
 
+folks = []
+folks.extend(district.soviet_street.house1.room1.folks)
+folks.extend(district.soviet_street.house1.room2.folks)
+folks.extend(district.soviet_street.house2.room1.folks)
+folks.extend(district.soviet_street.house2.room2.folks)
+folks.extend(district.central_street.house1.room1.folks)
+folks.extend(district.central_street.house1.room2.folks)
+folks.extend(district.central_street.house2.room1.folks)
+folks.extend(district.central_street.house2.room2.folks)
 
-
+print('На районе живут', ', '.join(folks))
