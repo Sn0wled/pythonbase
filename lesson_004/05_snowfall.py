@@ -43,7 +43,6 @@ while True:
                 create_snowflake()
         sd.snowflake(flake['point'], flake['length'])
         sd.finish_drawing()
-    sd.sleep(0.1)
     if sd.user_want_exit():
         break
 
