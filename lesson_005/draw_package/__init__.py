@@ -1,0 +1,3 @@
+import draw_environment
+import draw_house
+import draw_human
