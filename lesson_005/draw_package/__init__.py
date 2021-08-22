@@ -1,3 +1,1 @@
-import draw_environment
-import draw_house
-import draw_human
+from . import draw_environment, draw_house, draw_human

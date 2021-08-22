@@ -15,6 +15,7 @@ def draw_rainbow():
         radius = start_radius + i * step
         color = rainbow_colors[i]
         sd.circle(start_point, radius, color, circle_width)
+    sd.take_background()
 
 
 if __name__ == '__main__':

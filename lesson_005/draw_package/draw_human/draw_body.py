@@ -12,6 +12,6 @@ def draw_body(start_point, color):
     body_points = [point_2, point_1]
     hands_points = [point_hand_end_1, point_hand_start, point_hand_end_2]
     legs_points = [point_leg_end_1, point_2, point_leg_end_2]
-    sd.lines(body_points, width=2, color=color)
-    sd.lines(hands_points, width=2, color=color)
-    sd.lines(legs_points, width=2, color=color)
+    sd.lines(body_points, width=4, color=color)
+    sd.lines(hands_points, width=4, color=color)
+    sd.lines(legs_points, width=4, color=color)

@@ -8,10 +8,11 @@ def draw_wall(start_point, wall_height, wall_width, wall_color=sd.COLOR_YELLOW):
     v3 = sd.get_vector(v2.end_point, angle=180, length=wall_width)
     v4 = sd.get_vector(v3.end_point, angle=270, length=wall_height)
 
-    v1.draw(color=wall_color, width=line_width)
-    v2.draw(color=wall_color, width=line_width)
-    v3.draw(color=wall_color, width=line_width)
-    v4.draw(color=wall_color, width=line_width)
+    square_points = [start_point, v1.end_point, v2.end_point, v3.end_point]
+
+
+    sd.polygon(square_points, color=sd.COLOR_DARK_RED, width=0)
+    sd.polygon(square_points, color=wall_color, width=line_width)
 
     break_height = 20
     break_length = 2 * break_height

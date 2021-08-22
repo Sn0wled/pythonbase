@@ -1,5 +1,4 @@
-import draw_roof
-import draw_wall
+from . import draw_wall, draw_roof
 
 
 def draw_house(start_point, house_wall_height, house_wall_length, wall_color=draw_wall.sd.COLOR_YELLOW,

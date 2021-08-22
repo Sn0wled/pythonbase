@@ -1,6 +1,6 @@
-import draw_body
-import draw_head
 import simple_draw as sd
+
+from . import  draw_body, draw_head
 
 
 def draw_human(earth_point, human_color):

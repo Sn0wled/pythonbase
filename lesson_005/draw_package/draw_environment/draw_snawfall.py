@@ -13,18 +13,17 @@ def create_snowfall(start_x, end_x, ground_y=100):
 
     for i in range(N):
         create_snowflake()
-
-    while True:
+    test = True
+    while test:
+        test = False
         sd.start_drawing()
         for flake in snowflake_arrow:
             sd.snowflake(flake['point'], flake['length'], color=sd.background_color)
             if flake['point'].y > flake['length'] + ground_y:
-                flake['point'].y -= 20
-                flake['point'].x -= sd.randint(-10, 10)
+                test = True
+                flake['point'].y -= 5
             sd.snowflake(flake['point'], flake['length'])
             sd.finish_drawing()
-        if sd.user_want_exit():
-            break
 
 
 if __name__ == '__main__':

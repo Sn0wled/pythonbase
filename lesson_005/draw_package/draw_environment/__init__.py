@@ -1,5 +1,1 @@
-import draw_float
-import draw_rainbow
-import draw_snawfall
-import draw_sun
-import draw_tree
+from . import draw_float, draw_sun, draw_tree, draw_rainbow, draw_snawfall
