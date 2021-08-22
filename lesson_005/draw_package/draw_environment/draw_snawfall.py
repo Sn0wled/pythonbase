@@ -21,7 +21,9 @@ def create_snowfall(start_x, end_x, ground_y=100):
             sd.snowflake(flake['point'], flake['length'], color=sd.background_color)
             if flake['point'].y > flake['length'] + ground_y:
                 test = True
-                flake['point'].y -= 5
+                flake['point'].y -= 30
+                if flake['point'].y < flake['length'] + ground_y:
+                    flake['point'].y = flake['length'] + ground_y
             sd.snowflake(flake['point'], flake['length'])
             sd.finish_drawing()
 
